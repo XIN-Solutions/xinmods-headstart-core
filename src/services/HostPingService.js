@@ -6,11 +6,14 @@ const S3 = new AWS.S3({apiVersion: "2006-03-01"});
 // 5 minutes ping interval
 const HostPingInterval = 60 * 1000 * 5;
 
-// bucket and baseFolder for storing the host ping files.
-const bucket = process.env.HOST_PING_BUCKET || null;
-const baseFolder = process.env.HOST_PING_KEY || null;
+// // bucket and baseFolder for storing the host ping files.
+let bucket = null;
+let baseFolder = null;
 
 module.exports = {
+
+    bucket: null,
+    baseFolder: null,
 
     /**
      * Get a list of active hostnames from S3.
@@ -80,7 +83,11 @@ module.exports = {
     /**
      * Start sending hostnames.
      */
-    start() {
+    start(aBucket, aBaseFolder) {
+
+        bucket = aBucket;
+        baseFolder = aBaseFolder;
+
 		if (!bucket || !baseFolder) {
 			throw new Error("Should set HOST_PING_BUCKET and HOST_PING_KEY");
 		}
