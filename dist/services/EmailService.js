@@ -32,8 +32,8 @@ var EmailService = /*#__PURE__*/function () {
   /**
    * Send an email to someone using a specific template that has a number of values inserted.
    *
-   * @param customer {object} the customer information.
-   * @param to {string} the email address
+   * @param from {string} the `from:` email address
+   * @param to {string} the `to:` email address
    * @param htmlTemplate {string} the name of the template
    * @param values {object} the values to insert into the template
    */
@@ -42,16 +42,14 @@ var EmailService = /*#__PURE__*/function () {
   _createClass(EmailService, [{
     key: "sendEmail",
     value: function () {
-      var _sendEmail = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2(app, customer, from, to, subject) {
-        var htmlTemplate,
-            values,
+      var _sendEmail = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2(app, from, to, subject, htmlTemplate) {
+        var values,
             _args2 = arguments;
         return _regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                htmlTemplate = _args2.length > 5 && _args2[5] !== undefined ? _args2[5] : null;
-                values = _args2.length > 6 ? _args2[6] : undefined;
+                values = _args2.length > 5 && _args2[5] !== undefined ? _args2[5] : {};
                 console.log("Sending an email to ".concat(to, ", of template: ").concat(htmlTemplate, ", with values: "), values);
                 return _context2.abrupt("return", new Promise( /*#__PURE__*/function () {
                   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(resolve, reject) {
@@ -99,7 +97,7 @@ var EmailService = /*#__PURE__*/function () {
                   };
                 }()));
 
-              case 4:
+              case 3:
               case "end":
                 return _context2.stop();
             }

@@ -14,12 +14,12 @@ class EmailService {
     /**
      * Send an email to someone using a specific template that has a number of values inserted.
      *
-     * @param customer {object} the customer information.
-     * @param to {string} the email address
+     * @param from {string} the `from:` email address
+     * @param to {string} the `to:` email address
      * @param htmlTemplate {string} the name of the template
      * @param values {object} the values to insert into the template
      */
-    async sendEmail(app, customer, from, to, subject, htmlTemplate = null, values) {
+    async sendEmail(app, from, to, subject, htmlTemplate, values= {}) {
 
         console.log(`Sending an email to ${to}, of template: ${htmlTemplate}, with values: `, values);
 
