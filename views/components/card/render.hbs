@@ -1,9 +1,0 @@
-{{#if (or (equals variation null) (equals variation "vertical")) }}
-    {{> card/vertical }}
-{{else if (equals variation "horizontal")}}
-    {{> card/horizontal }}
-{{else if (equals variation "overlay")}}
-    {{> card/overlay }}
-{{else}}
-    Unknown Variation: <pre>{{variation}}</pre>
-{{/if}}
