@@ -6,7 +6,7 @@
   "repository": "https://github.com/XIN-Solutions/xinmods-headstart-core",
   "scripts": {
     "build": "./node_modules/@babel/cli/bin/babel.js src -d dist",
-    "release": "npm run build && git commit -a -m 'Release build' && npm version patch && npm publish",
+    "release": "rm dist/ -R && npm run build && git commit -a -m 'Release build' && npm version patch && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
