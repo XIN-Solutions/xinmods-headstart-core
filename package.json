@@ -2,7 +2,6 @@
   "name": "xinmods-headstart-core",
   "version": "1.0.6",
   "description": "Some handy services to speed up development with XIN Mods",
-  "main": "src/index.js",
   "repository": "https://github.com/XIN-Solutions/xinmods-headstart-core",
   "scripts": {
     "build": "./node_modules/@babel/cli/bin/babel.js src -d dist",
