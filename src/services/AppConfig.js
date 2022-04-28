@@ -7,6 +7,7 @@ const configuration = {
 	hotReload: process.env.HOT_RELOAD === "true",
 	hotReloadPort: parseInt(process.env.HOT_RELOAD_PORT || "30303"),
 	baseDomain: process.env.BASE_DOMAIN || 'frontend.local',
+	baseUrl: process.env.BASE_URL || 'http://frontend.local:3000',
 
     defaultPageTTL: 60,
 
